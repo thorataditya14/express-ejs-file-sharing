@@ -4,6 +4,7 @@ dotenv.config();
 const express = require("express");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(__dirname + '/public'));
 
 const multer = require("multer");
 const upload = multer({ dest: "uploads" });
@@ -43,12 +44,13 @@ async function handleDownload(req, res) {
             res.render("password");
             return;
         }
+
+        if (!(await bcrypt.compare(req.body.password, file.password))) {
+            res.render("password", { error: true });
+            return;
+        }
     }
 
-    if (!(await bcrypt.compare(req.body.password, file.password))) {
-        res.render("password", { error: true });
-        return;
-    }
 
     ++file.downloadCount;
     await file.save();

@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    z-index: 1;
+}
+
+label,
+input,
+button {
+    padding: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+button {
+    grid-column: span 2;
+    background-color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    background: linear-gradient(to right, black 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 0.5s ease;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+    background-position: left bottom;
+}
+
+.message {
+    margin-top: 20px;
+}
+
+.file-uploaded,
+.incorrect-password {
+    padding: 5px;
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.file-link {
+    padding: 5px;
+}
+
+.incorrect-password {
+    color: red;
+}
