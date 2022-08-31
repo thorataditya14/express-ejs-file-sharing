@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Aditya Thorat",
   "license": "ISC",
@@ -17,6 +16,5 @@
     "express": "^4.18.1",
     "mongoose": "^6.5.3",
     "multer": "^1.4.5-lts.1",
-    "webpack": "^5.73.0"
   }
 }
